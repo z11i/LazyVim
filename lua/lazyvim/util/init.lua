@@ -135,14 +135,22 @@ function M.toggle(option, silent, values)
 end
 
 local enabled = true
-function M.toggle_diagnostics()
-  enabled = not enabled
-  if enabled then
-    vim.diagnostic.enable()
-    Util.info("Enabled diagnostics", { title = "Diagnostics" })
+function M.toggle_diagnostics(bufnr)
+  if bufnr then
+    if vim.diagnostic.is_disabled(bufnr) then
+      vim.diagnostic.enable(bufnr)
+    else
+      vim.diagnostic.disable(bufnr)
+    end
   else
-    vim.diagnostic.disable()
-    Util.warn("Disabled diagnostics", { title = "Diagnostics" })
+    enabled = not enabled
+    if enabled then
+      vim.diagnostic.enable()
+      Util.info("Enabled diagnostics", { title = "Diagnostics" })
+    else
+      vim.diagnostic.disable()
+      Util.warn("Disabled diagnostics", { title = "Diagnostics" })
+    end
   end
 end
 
