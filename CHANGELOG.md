@@ -1,5 +1,67 @@
 # Changelog
 
+## [1.24.0](https://github.com/LazyVim/LazyVim/compare/v1.23.0...v1.24.0) (2023-03-31)
+
+
+### Features
+
+* **autocmds:** add auto create dir ([#493](https://github.com/LazyVim/LazyVim/issues/493)) ([ed48b85](https://github.com/LazyVim/LazyVim/commit/ed48b85dbea30a15518b4caa58cbf5d2b54f97a0))
+* **lualine:** added lazy extension ([79fe045](https://github.com/LazyVim/LazyVim/commit/79fe0455a02b791eae26e9934fdbaf075d9522ae))
+
+## [1.23.0](https://github.com/LazyVim/LazyVim/compare/v1.22.0...v1.23.0) (2023-03-25)
+
+
+### Features
+
+* **treesitter:** use Python indents as they've improved greatly ([#490](https://github.com/LazyVim/LazyVim/issues/490)) ([59eb198](https://github.com/LazyVim/LazyVim/commit/59eb19835f3b291912d46e5e8ea762367201cbf1))
+
+## [1.22.0](https://github.com/LazyVim/LazyVim/compare/v1.21.2...v1.22.0) (2023-03-23)
+
+
+### Features
+
+* **mason:** compatibility with the new mason registry ([df5cbfd](https://github.com/LazyVim/LazyVim/commit/df5cbfdbeccfa37ee391be8b49da7a4a4b6dcc40))
+* **treesitter:** add luadoc ([#469](https://github.com/LazyVim/LazyVim/issues/469)) ([ade4342](https://github.com/LazyVim/LazyVim/commit/ade4342c42c47f4eadae3e6267ac35f546692158))
+
+
+### Bug Fixes
+
+* **autocmd:** remove query from q-to-quit autocmd ([#473](https://github.com/LazyVim/LazyVim/issues/473)) ([b0cef1f](https://github.com/LazyVim/LazyVim/commit/b0cef1f506e4bbaa8cfe07990ee49518d8e13f3d))
+* **mason:** removed flake8. You can add it back in your own configs if you need it or add ruff_lsp ([381ee0a](https://github.com/LazyVim/LazyVim/commit/381ee0a9fc536a4e1ed9ad3e089f10129f0d50a0))
+
+## [1.21.2](https://github.com/LazyVim/LazyVim/compare/v1.21.1...v1.21.2) (2023-03-19)
+
+
+### Bug Fixes
+
+* **alpha:** use `AlphaFooter` highlight for footer section ([#461](https://github.com/LazyVim/LazyVim/issues/461)) ([a7b25e1](https://github.com/LazyVim/LazyVim/commit/a7b25e13fa645dea848047e0dda54db9b254ec8e))
+
+## [1.21.1](https://github.com/LazyVim/LazyVim/compare/v1.21.0...v1.21.1) (2023-03-17)
+
+
+### Bug Fixes
+
+* **config:** compat with lazy.nvim ([501474e](https://github.com/LazyVim/LazyVim/commit/501474e42166e199e61b4e704b266bd0a9625a65))
+
+## [1.21.0](https://github.com/LazyVim/LazyVim/compare/v1.20.0...v1.21.0) (2023-03-17)
+
+
+### Features
+
+* **lsp:** added keymap to see source actions with `&lt;leader&gt;cA` (useful for tsserver and others) ([9f5a0f1](https://github.com/LazyVim/LazyVim/commit/9f5a0f1bd847663deea9cb48a178b85d7bdb3ec6))
+
+## [1.20.0](https://github.com/LazyVim/LazyVim/compare/v1.19.0...v1.20.0) (2023-03-17)
+
+
+### Features
+
+* **lsp:** make lsp work when mason-lspconfig is disabled. Fixed [#445](https://github.com/LazyVim/LazyVim/issues/445) ([c10e550](https://github.com/LazyVim/LazyVim/commit/c10e550639caef68146d122d9bc4a66f2f38650a))
+
+
+### Bug Fixes
+
+* **icons:** replace obsolete icons ([#441](https://github.com/LazyVim/LazyVim/issues/441)) ([cec000d](https://github.com/LazyVim/LazyVim/commit/cec000dfd863bd681a5195eb71c0797f5d030062))
+
 ## [1.19.0](https://github.com/LazyVim/LazyVim/compare/v1.18.2...v1.19.0) (2023-03-14)
 
 

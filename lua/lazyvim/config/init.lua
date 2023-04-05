@@ -21,7 +21,7 @@ local defaults = {
     diagnostics = {
       Error = " ",
       Warn = " ",
-      Hint = " ",
+      Hint = " ",
       Info = " ",
     },
     git = {
@@ -42,7 +42,7 @@ local defaults = {
       Event = " ",
       Field = " ",
       File = " ",
-      Folder = " ",
+      Folder = " ",
       Function = " ",
       Interface = " ",
       Key = " ",
@@ -50,7 +50,7 @@ local defaults = {
       Method = " ",
       Module = " ",
       Namespace = " ",
-      Null = "ﳠ ",
+      Null = " ",
       Number = " ",
       Object = " ",
       Operator = " ",
@@ -132,10 +132,11 @@ function M.load(name)
     end, {
       msg = "Failed loading " .. mod,
       on_error = function(msg)
-        local modpath = require("lazy.core.cache").find(mod)
-        if modpath then
-          Util.error(msg)
+        local info = require("lazy.core.cache").find(mod)
+        if info == nil or (type(info) == "table" and #info == 0) then
+          return
         end
+        Util.error(msg)
       end,
     })
   end

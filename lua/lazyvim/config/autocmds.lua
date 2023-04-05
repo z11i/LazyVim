@@ -48,7 +48,6 @@ vim.api.nvim_create_autocmd("FileType", {
     "man",
     "notify",
     "qf",
-    "query", -- :InspectTree
     "spectre_panel",
     "startuptime",
     "tsplayground",
@@ -66,5 +65,14 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
+  end,
+})
+
+-- Auto create dir when saving a file, in case some intermediate directory does not exist
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  group = augroup("auto_create_dir"),
+  callback = function(event)
+    local file = vim.loop.fs_realpath(event.match) or event.match
+    vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })

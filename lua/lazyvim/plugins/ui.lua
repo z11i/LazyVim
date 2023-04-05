@@ -83,7 +83,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    opts = function(plugin)
+    opts = function()
       local icons = require("lazyvim.config").icons
 
       local function fg(name)
@@ -98,7 +98,7 @@ return {
         options = {
           theme = "auto",
           globalstatus = true,
-          disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },
+          disabled_filetypes = { statusline = { "dashboard", "alpha" } },
         },
         sections = {
           lualine_a = { "mode" },
@@ -154,7 +154,7 @@ return {
             end,
           },
         },
-        extensions = { "neo-tree" },
+        extensions = { "neo-tree", "lazy" },
       }
     end,
   },
@@ -240,9 +240,9 @@ return {
 
       dashboard.section.header.val = vim.split(logo, "\n")
       dashboard.section.buttons.val = {
-        dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
+        dashboard.button("f", " " .. " Find file", ":Telescope find_files <CR>"),
         dashboard.button("n", " " .. " New file", ":ene <BAR> startinsert <CR>"),
-        dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
+        dashboard.button("r", " " .. " Recent files", ":Telescope oldfiles <CR>"),
         dashboard.button("g", " " .. " Find text", ":Telescope live_grep <CR>"),
         dashboard.button("c", " " .. " Config", ":e $MYVIMRC <CR>"),
         dashboard.button("s", " " .. " Restore Session", [[:lua require("persistence").load() <cr>]]),
@@ -253,9 +253,9 @@ return {
         button.opts.hl = "AlphaButtons"
         button.opts.hl_shortcut = "AlphaShortcut"
       end
-      dashboard.section.footer.opts.hl = "Type"
       dashboard.section.header.opts.hl = "AlphaHeader"
       dashboard.section.buttons.opts.hl = "AlphaButtons"
+      dashboard.section.footer.opts.hl = "AlphaFooter"
       dashboard.opts.layout[1].val = 8
       return dashboard
     end,
